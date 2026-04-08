@@ -16,10 +16,15 @@ Including another URLconf
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("🔥 LocalEase is LIVE 🚀")
 
 from HomeServices_project import settings
 
 urlpatterns = [
+     path('', home),  
     path('admin/', admin.site.urls),
 ]
 # urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_URL)
